@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Menu</title>
+    <link rel="stylesheet" href="./css/services.css" />
+    <link rel="stylesheet" href="./css/menu.css" />
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="container">
+        <div class="overlay"></div>
+      </div>
+
+      <div class="text-upper">Our Menu</div>
+      <div class="nav-bar">
+        <ul>
+          <div class="logo">
+            <img id="logo-photo" src="./images/utensil.png" alt="utensils" />
+            <h2 class="resturant-name">Restraunt</h2>
+          </div>
+          <li><a href="index.html">HOME</a></li>
+          <li><a href="aboutus.html">ABOUT</a></li>
+          <li><a href="services.html">SERVICE</a></li>
+          <li><a href="menu.html">MENU</a></li>
+          <li><a href="cart.html"> 🛒 CART</a></li>
+          <li><a href="login_page.html" id="LOG">LOGIN</a></li>
+          <!-- <li class="tablebooking"><a href="#Book A Table">BOOK A TABLE</a></li> -->
+          <a href="booktable.html"
+            ><button class="booking-btn">BOOK A TABLE</button></a
+          >
+        </ul>
+      </div>
+    </div>
+
+    <div class="main-section">
+      <!-- <div class="heading1">Menu</div> -->
+      <div class="menu-bar"></div>
+      <!-- </div> -->
+    </div>
+
+    <script>
+      function isInViewport(element) {
+        const rect = element.getBoundingClientRect();
+        return (
+          rect.top >= 0 &&
+          rect.left >= 0 &&
+          rect.bottom <=
+            (window.innerHeight || document.documentElement.clientHeight) &&
+          rect.right <=
+            (window.innerWidth || document.documentElement.clientWidth)
+        );
+      }
+      function handleScroll() {
+        const boxes = document.querySelectorAll(".box");
+        boxes.forEach((box) => {
+          if (isInViewport(box)) {
+            box.classList.add("show");
+          }
+        });
+      }
+      window.addEventListener("scroll", handleScroll);
+      handleScroll();
+    </script>
+
+    <script src="./JS/menu.js"></script>
+    <script src="./JS/menuItem.js"></script>
+    <script src="/JS/menuDynamic.js"></script>
+  </body>
+</html>
